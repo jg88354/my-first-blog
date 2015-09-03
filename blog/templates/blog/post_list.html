@@ -7,19 +7,12 @@
 		<h1><a href="">Blog for Django Girls experiment</a></h1>
 		</div>
 
-		<div>
-			<p>published: 09.03.2015, 3:08pm</p>
-			<h2><a href="">This is the first blog post</a></h2>
-			<p>This is where blog text goes. This is where blog text goes. This is where blog text goes. This is where blog text goes. This is where blog text goes. This is where blog text goes. </p>
-			<p>published: 09.03.2015, 3:16pm</p>
-		</div>
-
-		<div>
-			<h2><a href="">And a second blog post</a></h2>
-			<p>Second blog post. Second blog post. Second blog post. Second blog post. Second blog post. Second blog post. Second blog post. Second blog post. Second blog post. </p>
-			<p>Second blog post. Second blog post. Second blog post. Second blog post. Second blog post. Second blog post. Second blog post. Second blog post. </p>
-			<p>published: 09.03.2015, 3:17pm</p>
-
-		</div>
+			{% for post in posts %}
+			<div>
+				<p>published: {{ post.published_date }}</p>
+				<h1><a href="">{{ post.title }}</a></h1>
+				<p>{{ post.text|linebreaks }}</p>
+			</div>
+			{% endfor %}
 	</body>
 </html>
